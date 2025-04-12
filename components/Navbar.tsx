@@ -1,0 +1,117 @@
+'use client';
+import React, { useState } from 'react';
+import {
+	Menu,
+	X,
+	Sparkles,
+	Home,
+	Contact,
+	Code,
+	Server,
+	User,
+	Mail,
+} from 'lucide-react';
+import { Link } from '@heroui/link';
+import { Button, Image } from '@heroui/react';
+const Navbar = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
+	const navLinks = [
+		{ name: 'Home', path: '/', icon: <Home size={16} /> },
+		{
+			name: 'Services',
+			path: '/services',
+			icon: <Server size={16} />,
+		},
+		{ name: 'Projects', path: '/projects', icon: <Code size={16} /> },
+		{ name: 'About', path: '/about', icon: <User size={16} /> },
+		{
+			name: 'Contact',
+			path: '/contact',
+			icon: <Contact size={16} />,
+		},
+	];
+
+	return (
+		<nav className="fixed top-0 left-0 right-0 z-50 py-4">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="glass-panel rounded-xl px-4 py-2">
+					<div className="flex items-center justify-between">
+						<Link href="/" className="flex items-center space-x-2">
+							<Image src="/logo_full.svg" alt="logo" width={200} height={64} />
+						</Link>
+
+						{/* Desktop Navigation */}
+						<div className="hidden md:flex items-center space-x-8">
+							{navLinks.map((link) => (
+								<Link
+									color="foreground"
+									key={link.name}
+									href={link.path}
+									underline="hover"
+									className="flex items-center gap-2 min-h-[40px]"
+								>
+									<span className="flex items-center justify-center w-5 h-5">
+										{link.icon}
+									</span>
+									<span>{link.name}</span>
+								</Link>
+							))}
+							<Button
+								color="primary"
+								variant="solid"
+								startContent={<Mail size={16} />}
+							>
+								Get in Touch
+							</Button>
+						</div>
+
+						{/* Mobile Menu Button */}
+						<button
+							className="md:hidden rounded-lg p-2 glass-card hover:bg-white/10 transition-colors"
+							onClick={toggleMenu}
+						>
+							{isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+						</button>
+					</div>
+
+					{/* Mobile Navigation */}
+					{isMenuOpen && (
+						<div className="md:hidden mt-4 pb-2">
+							<div className="flex flex-col space-y-4">
+								{navLinks.map((link) => (
+									<Button
+										color="default"
+										variant="light"
+										key={link.name}
+										href={link.path}
+										onPress={() => setIsMenuOpen(false)}
+										className="flex items-center justify-start gap-2 min-h-[40px]"
+									>
+										<span className="flex items-center justify-center w-5 h-5">
+											{link.icon}
+										</span>
+										<span>{link.name}</span>
+									</Button>
+								))}
+								<Button
+									color="primary"
+									variant="shadow"
+									startContent={<Mail size={16} />}
+								>
+									Get in Touch
+								</Button>
+							</div>
+						</div>
+					)}
+				</div>
+			</div>
+		</nav>
+	);
+};
+
+export default Navbar;
