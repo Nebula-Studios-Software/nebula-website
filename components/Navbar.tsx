@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { Link } from '@heroui/link';
 import { Button, Image } from '@heroui/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface NavbarProps {
 	dictionary: any;
@@ -22,31 +22,41 @@ interface NavbarProps {
 const Navbar = ({ dictionary }: NavbarProps) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const router = useRouter();
+	const pathname = usePathname();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
+	// Estrai la lingua dal pathname (es: /en/about -> en)
+	const currentLang = pathname.split('/')[1];
+
+	// Crea i percorsi con il prefisso della lingua
 	const navLinks = [
 		{
 			name: dictionary?.common?.nav?.home || 'Home',
-			path: '/',
+			path: `/${currentLang}`,
 			icon: <Home size={16} />,
 		},
 		{
 			name: dictionary?.common?.nav?.services || 'Services',
-			path: '/services',
+			path: `/${currentLang}/services`,
 			icon: <Server size={16} />,
 		},
 		{
 			name: dictionary?.common?.nav?.projects || 'Projects',
-			path: '/projects',
+			path: `/${currentLang}/projects`,
 			icon: <Code size={16} />,
 		},
 		{
 			name: dictionary?.common?.nav?.about || 'About',
-			path: '/about',
+			path: `/${currentLang}/about`,
 			icon: <User size={16} />,
+		},
+		{
+			name: dictionary?.common?.nav?.contact || 'Contact',
+			path: `/${currentLang}/contact`,
+			icon: <Contact size={16} />,
 		},
 	];
 
@@ -55,7 +65,7 @@ const Navbar = ({ dictionary }: NavbarProps) => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="glass-panel rounded-xl px-4 py-2">
 					<div className="flex items-center justify-between">
-						<Link href="/" className="flex items-center space-x-2">
+						<Link href={`/${currentLang}`} className="flex items-center space-x-2">
 							<Image src="/logo_full.svg" alt="logo" width={200} height={64} />
 						</Link>
 
@@ -66,8 +76,10 @@ const Navbar = ({ dictionary }: NavbarProps) => {
 									color="foreground"
 									key={link.name}
 									href={link.path}
-									underline="hover"
-									className="flex items-center gap-2 min-h-[40px]"
+									underline={link.path === pathname ? 'always' : 'hover'}
+									className={`flex items-center gap-2 min-h-[40px] ${
+										pathname === link.path ? 'text-primary-400' : ''
+									}`}
 								>
 									<span className="flex items-center justify-center w-5 h-5">
 										{link.icon}
@@ -106,7 +118,9 @@ const Navbar = ({ dictionary }: NavbarProps) => {
 											router.push(link.path);
 											setIsMenuOpen(false);
 										}}
-										className="flex items-center justify-start gap-2 min-h-[40px]"
+										className={`flex items-center justify-start gap-2 min-h-[40px] ${
+											pathname === link.path ? 'text-primary-400' : ''
+										}`}
 									>
 										<span className="flex items-center justify-center w-5 h-5">
 											{link.icon}

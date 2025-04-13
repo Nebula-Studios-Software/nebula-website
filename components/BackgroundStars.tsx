@@ -52,7 +52,7 @@ const BackgroundStars = ({ isTransitioning }: BackgroundStarsProps) => {
 	// Initialize stars only once
 	useEffect(() => {
 		if (starsRef.current.length === 0) {
-			const newStars = generateStars(300);
+			const newStars = generateStars(100);
 			starsRef.current = newStars;
 			setStars(newStars);
 		}

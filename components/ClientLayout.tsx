@@ -6,6 +6,8 @@ import BackgroundStars from './BackgroundStars';
 import Navbar from './Navbar';
 import CustomCursor from './CustomCursor';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { LoadingScreen } from './LoadingScreen';
+import { useLoading } from '@/contexts/LoadingContext';
 
 interface ClientLayoutProps {
 	children: React.ReactNode;
@@ -18,6 +20,7 @@ export default function ClientLayout({
 }: ClientLayoutProps) {
 	const pathname = usePathname();
 	const [isTransitioning, setIsTransitioning] = useState(false);
+	const { isLoading, language } = useLoading();
 
 	useEffect(() => {
 		setIsTransitioning(true);
@@ -27,6 +30,7 @@ export default function ClientLayout({
 
 	return (
 		<>
+			<LoadingScreen isLoading={isLoading} language={language} />
 			{/* <CustomCursor /> */}
 			<BackgroundStars isTransitioning={isTransitioning} />
 			<Navbar dictionary={dictionary} />

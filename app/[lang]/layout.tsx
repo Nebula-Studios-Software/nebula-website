@@ -8,6 +8,7 @@ import { fontSans } from '@/config/fonts';
 import Footer from '@/components/Footer';
 import ClientLayout from '@/components/ClientLayout';
 import { getDictionary } from './dictionaries';
+import { LoadingProvider } from '@/contexts/LoadingContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,16 +36,14 @@ export async function generateStaticParams() {
 
 interface RootLayoutProps {
 	children: React.ReactNode;
-	params: { lang: string };
+	params: Promise<{ lang: string }>;
 }
 
-export default async function RootLayout({
-	children,
-	params,
-}: RootLayoutProps) {
+export default async function RootLayout(props: RootLayoutProps) {
+	const { children } = props;
+	const params = await props.params;
 	const lang = params.lang;
-	const dictionary = await getDictionary(lang);
-
+	const dictionary = await getDictionary(lang as 'en' | 'it');
 	return (
 		<html lang={lang} suppressHydrationWarning>
 			<head />
@@ -55,12 +54,14 @@ export default async function RootLayout({
 					inter.className
 				)}
 			>
-				<Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-					<div className="relative flex flex-col">
-						<ClientLayout dictionary={dictionary}>{children}</ClientLayout>
-						<Footer />
-					</div>
-				</Providers>
+				<LoadingProvider>
+					<Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
+						<div className="relative flex flex-col">
+							<ClientLayout dictionary={dictionary}>{children}</ClientLayout>
+							<Footer />
+						</div>
+					</Providers>
+				</LoadingProvider>
 			</body>
 		</html>
 	);

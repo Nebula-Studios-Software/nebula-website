@@ -9,17 +9,35 @@ import {
 	Input,
 	Textarea,
 	Link,
-} from '@heroui/react';
+} from '@nextui-org/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CheckmarkAnimation from './CheckmarkAnimation';
-import { useTranslation } from '../hooks/useTranslation';
+import MotionDiv from './MotionDiv';
 
-const ContactSection = () => {
-	const { t } = useTranslation();
-	const [translations, setTranslations] = useState<any>({});
-	const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-	const [termsChecked, setTermsChecked] = useState<boolean>(false);
-	const [showSuccess, setShowSuccess] = useState<boolean>(false);
+interface ContactSectionProps {
+	dict: {
+		title: string;
+		subtitle: string;
+		form: {
+			name: string;
+			email: string;
+			subject: string;
+			message: string;
+			terms: string;
+			privacy: string;
+			send: string;
+			success: {
+				title: string;
+				message: string;
+			};
+		};
+		info: {
+			email: string;
+		};
+	};
+}
+
+export default function ContactSection({ dict }: ContactSectionProps) {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -27,61 +45,22 @@ const ContactSection = () => {
 		message: '',
 	});
 
-	useEffect(() => {
-		const loadTranslations = async () => {
-			const contact = await t('common.contact');
-			setTranslations(contact);
-		};
-		loadTranslations();
-	}, [t]);
-
-	const validateMessage = (value: string) => {
-		if (value.length < 10) {
-			return 'Please describe your project in detail';
-		}
-		return null;
-	};
-
-	const validateSubject = (value: string) => {
-		if (value.length > 50) {
-			return 'Please be more concise with your subject';
-		}
-		return null;
-	};
+	const [termsChecked, setTermsChecked] = useState(false);
+	const [showSuccess, setShowSuccess] = useState(false);
 
 	const handleInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) => {
 		const { name, value } = e.target;
-		setFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
+		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		setFormSubmitted(true);
-
-		if (!termsChecked) {
-			return;
-		}
-
-		console.log('Form Data:', {
-			...formData,
-			terms: termsChecked,
-		});
+		if (!termsChecked) return;
 
 		// Simuliamo l'invio del form
-		setTimeout(() => {
-			setShowSuccess(true);
-		}, 500);
-
-		// TODO: Send form data to server
-		//
-		// ------------------------------
-
-		// Nascondiamo il messaggio di successo dopo 5 secondi
+		setShowSuccess(true);
 		setTimeout(() => {
 			setShowSuccess(false);
 		}, 5000);
@@ -93,10 +72,8 @@ const ContactSection = () => {
 				<div className="glass-panel rounded-xl overflow-hidden">
 					<div className="grid grid-cols-1 lg:grid-cols-2">
 						<div className="p-8 md:p-12">
-							<h2 className="text-3xl md:text-4xl font-bold mb-4">
-								{translations.title}
-							</h2>
-							<p className="text-muted-foreground mb-8">{translations.subtitle}</p>
+							<h2 className="text-3xl md:text-4xl font-bold mb-4">{dict.title}</h2>
+							<p className="text-muted-foreground mb-8">{dict.subtitle}</p>
 
 							<div className="space-y-6 mb-8">
 								<div className="flex items-start">
@@ -105,7 +82,7 @@ const ContactSection = () => {
 									</div>
 									<div className="ml-4">
 										<h4 className="text-sm font-medium text-foreground/80">
-											{translations.info?.email}
+											{dict.info.email}
 										</h4>
 										<a
 											href="mailto:hello@nebulastudios.dev"
@@ -156,14 +133,14 @@ const ContactSection = () => {
 										<Form className="space-y-6" onSubmit={handleSubmit}>
 											<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 w-full">
 												<Input
-													label={translations.form?.name}
+													label={dict.form.name}
 													type="text"
 													name="name"
 													value={formData.name}
 													onChange={handleInputChange}
 													className="w-full"
 													labelPlacement="outside"
-													placeholder={translations.form?.name}
+													placeholder={dict.form.name}
 													isRequired
 													isClearable
 													classNames={{
@@ -173,7 +150,6 @@ const ContactSection = () => {
 														input: 'w-full',
 													}}
 												/>
-
 												<Input
 													label="Email"
 													type="email"
@@ -194,8 +170,6 @@ const ContactSection = () => {
 												/>
 											</div>
 
-											<Divider />
-
 											<Input
 												label="Subject"
 												fullWidth
@@ -206,7 +180,6 @@ const ContactSection = () => {
 												labelPlacement="outside"
 												placeholder="Project Inquiry"
 												isRequired
-												validate={validateSubject}
 												isClearable
 												classNames={{
 													inputWrapper:
@@ -223,7 +196,6 @@ const ContactSection = () => {
 												labelPlacement="outside"
 												label="Message"
 												isRequired
-												validate={validateMessage}
 												isClearable
 												classNames={{
 													inputWrapper:
@@ -238,9 +210,9 @@ const ContactSection = () => {
 													setTermsChecked(e.target.checked);
 												}}
 											>
-												{translations.form?.terms}{' '}
+												{dict.form.terms}{' '}
 												<Link href="/privacy" className="text-primary-400 hover:underline">
-													{translations.form?.privacy}
+													{dict.form.privacy}
 												</Link>
 											</Checkbox>
 
@@ -252,7 +224,7 @@ const ContactSection = () => {
 												color="primary"
 												startContent={<Mail size={16} />}
 											>
-												{translations.form?.send}
+												{dict.form.send}
 											</Button>
 										</Form>
 									</motion.div>
@@ -264,8 +236,8 @@ const ContactSection = () => {
 										className="h-full flex items-center justify-center"
 									>
 										<CheckmarkAnimation
-											title={translations.form?.success?.title}
-											message={translations.form?.success?.message}
+											title={dict.form.success.title}
+											message={dict.form.success.message}
 										/>
 									</motion.div>
 								)}
@@ -276,6 +248,4 @@ const ContactSection = () => {
 			</div>
 		</section>
 	);
-};
-
-export default ContactSection;
+}
