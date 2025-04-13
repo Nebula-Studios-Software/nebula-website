@@ -1,77 +1,85 @@
 {
-	"common": {
-		"contact": {
-			"title": "Contattaci",
-			"subtitle": "Hai un progetto in mente? Parliamo di come possiamo aiutarti a realizzare le tue idee.",
-			"form": {
-				"name": "Nome",
-				"email": "Email",
-				"subject": "Oggetto",
-				"message": "Messaggio",
-				"terms": "Accetto i termini e le condizioni",
-				"privacy": "Informativa sulla Privacy",
-				"send": "Invia Messaggio",
-				"success": {
-					"title": "Messaggio Inviato!",
-					"message": "Ti risponderemo al più presto."
-				}
-			},
-			"info": {
-				"email": "Email"
-			}
-		}
-	},
-	"hero": {
-		"title": "Creiamo prodotti digitali che",
-		"titleHighlight": "contano",
-		"subtitle": "Uno studio di sviluppo innovativo che crea esperienze digitali eccezionali per startup e brand.",
-		"buttons": {
-			"work": "Vedi i Nostri Lavori",
-			"contact": "Contattaci"
-		},
-		"services": {
-			"development": {
-				"title": "Sviluppo",
-				"description": "Creiamo applicazioni robuste e scalabili utilizzando tecnologie all'avanguardia e best practice."
-			},
-			"design": {
-				"title": "Design",
-				"description": "Design centrato sull'utente, bello e funzionale, per creare esperienze memorabili."
-			},
-			"strategy": {
-				"title": "Strategia",
-				"description": "Guida strategica per aiutarti a raggiungere i tuoi obiettivi aziendali attraverso soluzioni digitali."
-			}
-		}
-	},
-	"services": {
-		"title": "I Nostri Servizi",
-		"subtitle": "Soluzioni digitali complete per aiutarti a crescere nel panorama competitivo di oggi.",
-		"items": {
-			"web": {
-				"title": "Sviluppo Web",
-				"description": "Applicazioni web e siti personalizzati costruiti con tecnologie moderne per prestazioni ottimali."
-			},
-			"mobile": {
-				"title": "Sviluppo Mobile",
-				"description": "App native e cross-platform che offrono esperienze fluide su tutti i dispositivi."
-			},
-			"design": {
-				"title": "UI/UX Design",
-				"description": "Design centrato sull'utente che bilancia estetica e funzionalità per creare interfacce intuitive."
-			},
-			"strategy": {
-				"title": "Strategia Digitale",
-				"description": "Guida strategica per aiutarti a raggiungere i tuoi obiettivi aziendali attraverso soluzioni digitali."
-			},
-			"ecommerce": {
-				"title": "Soluzioni E-commerce",
-				"description": "Negozi online e esperienze di shopping personalizzate per massimizzare le conversioni."
-			},
-			"branding": {
-				"title": "Branding & Identità",
-				"description": "Identità di marca coerenti che comunicano efficacemente i tuoi valori e la tua visione."
-			}
-		}
-	}
+  "common": {
+    "nav": {
+      "home": "Home",
+      "services": "Servizi",
+      "projects": "Progetti",
+      "about": "Chi Siamo",
+      "contact": "Contatti",
+      "getInTouch": "Scrivici"
+    },
+    "contact": {
+      "title": "Contattaci",
+      "subtitle": "Hai un progetto in mente? Parliamo di come possiamo aiutarti a realizzare le tue idee.",
+      "form": {
+        "name": "Nome",
+        "email": "Email",
+        "subject": "Oggetto",
+        "message": "Messaggio",
+        "terms": "Accetto i termini e le condizioni",
+        "privacy": "Informativa sulla Privacy",
+        "send": "Invia Messaggio",
+        "success": {
+          "title": "Messaggio Inviato!",
+          "message": "Ti risponderemo al più presto."
+        }
+      },
+      "info": {
+        "email": "Email"
+      }
+    }
+  },
+  "hero": {
+    "title": "Creiamo prodotti digitali che",
+    "titleHighlight": "contano",
+    "subtitle": "Uno studio di sviluppo innovativo che crea esperienze digitali eccezionali per startup e brand.",
+    "buttons": {
+      "work": "Vedi i Nostri Lavori",
+      "contact": "Contattaci"
+    },
+    "services": {
+      "development": {
+        "title": "Sviluppo",
+        "description": "Creiamo applicazioni robuste e scalabili utilizzando tecnologie all'avanguardia e best practice."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Design centrato sull'utente, bello e funzionale, per creare esperienze memorabili."
+      },
+      "strategy": {
+        "title": "Strategia",
+        "description": "Guida strategica per aiutarti a raggiungere i tuoi obiettivi aziendali attraverso soluzioni digitali."
+      }
+    }
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "subtitle": "Soluzioni digitali complete per aiutarti a crescere nel panorama competitivo di oggi.",
+    "items": {
+      "web": {
+        "title": "Sviluppo Web",
+        "description": "Applicazioni web e siti personalizzati costruiti con tecnologie moderne per prestazioni ottimali."
+      },
+      "mobile": {
+        "title": "Sviluppo Mobile",
+        "description": "App native e cross-platform che offrono esperienze fluide su tutti i dispositivi."
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Design centrato sull'utente che bilancia estetica e funzionalità per creare interfacce intuitive."
+      },
+      "strategy": {
+        "title": "Strategia Digitale",
+        "description": "Guida strategica per aiutarti a raggiungere i tuoi obiettivi aziendali attraverso soluzioni digitali."
+      },
+      "ecommerce": {
+        "title": "Soluzioni E-commerce",
+        "description": "Negozi online e esperienze di shopping personalizzate per massimizzare le conversioni."
+      },
+      "branding": {
+        "title": "Branding & Identità",
+        "description": "Identità di marca coerenti che comunicano efficacemente i tuoi valori e la tua visione."
+      }
+    }
+  }
 }

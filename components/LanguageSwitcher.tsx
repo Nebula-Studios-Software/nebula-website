@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const { setLoading, setLanguage } = useLoading();
+  const { setLoading, setLanguage, language, reloadDictionary } = useLoading();
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Aggiunta della variabile di stato per gestire il montaggio del componente
@@ -33,16 +33,42 @@ export function LanguageSwitcher() {
   useEffect(() => {
     setIsMounted(true);
     const lang = pathname.split("/")[1];
-    setCurrentLang(lang);
-    setCurrentLanguage(languages.find((l) => l.code === lang));
+    // Assicuriamoci che sia una lingua valida
+    if (lang && (lang === "en" || lang === "it")) {
+      setCurrentLang(lang);
+      setCurrentLanguage(languages.find((l) => l.code === lang));
+    }
   }, [pathname]);
 
   const switchLanguage = async (lang: string) => {
+    if (lang === currentLang) {
+      setIsOpen(false);
+      return; // Non fare nulla se la lingua è già quella selezionata
+    }
+
     setLoading(true);
     setLanguage(lang);
-    const newPath = pathname.replace(`/${currentLang}`, `/${lang}`);
+
+    // Costruisci il nuovo percorso
+    let newPath;
+    if (pathname.startsWith(`/${currentLang}/`)) {
+      // Se il pattern è /{lingua}/qualcosa
+      newPath = pathname.replace(`/${currentLang}/`, `/${lang}/`);
+    } else if (pathname === `/${currentLang}`) {
+      // Se il pattern è solo /{lingua}
+      newPath = `/${lang}`;
+    } else {
+      // Fallback nel caso in cui il pathname non abbia la lingua
+      newPath = `/${lang}`;
+    }
+
+    // Naviga alla nuova pagina
     await router.push(newPath);
+    // Forza il refresh dei dizionari
+    reloadDictionary();
     setIsOpen(false);
+
+    // Attendi un po' per l'effetto di loading
     setTimeout(() => {
       setLoading(false);
     }, 500);

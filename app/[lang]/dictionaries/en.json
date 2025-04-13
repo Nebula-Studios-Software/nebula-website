@@ -1,77 +1,85 @@
 {
-	"common": {
-		"contact": {
-			"title": "Contact Us",
-			"subtitle": "Have a project in mind? Let's talk about how we can help bring your ideas to life.",
-			"form": {
-				"name": "Name",
-				"email": "Email",
-				"subject": "Subject",
-				"message": "Message",
-				"terms": "I accept the terms and conditions",
-				"privacy": "Privacy Policy",
-				"send": "Send Message",
-				"success": {
-					"title": "Message Sent!",
-					"message": "We'll get back to you soon."
-				}
-			},
-			"info": {
-				"email": "Email"
-			}
-		}
-	},
-	"hero": {
-		"title": "We build digital products that",
-		"titleHighlight": "matter",
-		"subtitle": "A forward-thinking development studio crafting exceptional digital experiences for startups and brands.",
-		"buttons": {
-			"work": "View Our Work",
-			"contact": "Get in Touch"
-		},
-		"services": {
-			"development": {
-				"title": "Development",
-				"description": "We craft robust, scalable applications using cutting-edge technologies and best practices."
-			},
-			"design": {
-				"title": "Design",
-				"description": "User-centered design that's both beautiful and functional, creating memorable experiences."
-			},
-			"strategy": {
-				"title": "Strategy",
-				"description": "Strategic guidance to help you achieve your business goals through digital solutions."
-			}
-		}
-	},
-	"services": {
-		"title": "Our Services",
-		"subtitle": "Comprehensive digital solutions to help you succeed in today's competitive landscape.",
-		"items": {
-			"web": {
-				"title": "Web Development",
-				"description": "Custom web applications and websites built with modern technologies for optimal performance."
-			},
-			"mobile": {
-				"title": "Mobile Development",
-				"description": "Native and cross-platform mobile apps that provide seamless experiences across devices."
-			},
-			"design": {
-				"title": "UI/UX Design",
-				"description": "User-centered design that balances aesthetics with functionality to create intuitive interfaces."
-			},
-			"strategy": {
-				"title": "Digital Strategy",
-				"description": "Strategic guidance to help you achieve your business goals through digital solutions."
-			},
-			"ecommerce": {
-				"title": "E-commerce Solutions",
-				"description": "Custom online stores and shopping experiences built for conversion and ease of use."
-			},
-			"branding": {
-				"title": "Branding & Identity",
-				"description": "Cohesive brand identities that effectively communicate your values and vision."
-			}
-		}
-	}
+  "common": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "about": "About",
+      "contact": "Contact",
+      "getInTouch": "Get in Touch"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Have a project in mind? Let's talk about how we can help bring your ideas to life.",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "terms": "I accept the terms and conditions",
+        "privacy": "Privacy Policy",
+        "send": "Send Message",
+        "success": {
+          "title": "Message Sent!",
+          "message": "We'll get back to you soon."
+        }
+      },
+      "info": {
+        "email": "Email"
+      }
+    }
+  },
+  "hero": {
+    "title": "We build digital products that",
+    "titleHighlight": "matter",
+    "subtitle": "A forward-thinking development studio crafting exceptional digital experiences for startups and brands.",
+    "buttons": {
+      "work": "View Our Work",
+      "contact": "Get in Touch"
+    },
+    "services": {
+      "development": {
+        "title": "Development",
+        "description": "We craft robust, scalable applications using cutting-edge technologies and best practices."
+      },
+      "design": {
+        "title": "Design",
+        "description": "User-centered design that's both beautiful and functional, creating memorable experiences."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Strategic guidance to help you achieve your business goals through digital solutions."
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive digital solutions to help you succeed in today's competitive landscape.",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "description": "Custom web applications and websites built with modern technologies for optimal performance."
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile apps that provide seamless experiences across devices."
+      },
+      "design": {
+        "title": "UI/UX Design",
+        "description": "User-centered design that balances aesthetics with functionality to create intuitive interfaces."
+      },
+      "strategy": {
+        "title": "Digital Strategy",
+        "description": "Strategic guidance to help you achieve your business goals through digital solutions."
+      },
+      "ecommerce": {
+        "title": "E-commerce Solutions",
+        "description": "Custom online stores and shopping experiences built for conversion and ease of use."
+      },
+      "branding": {
+        "title": "Branding & Identity",
+        "description": "Cohesive brand identities that effectively communicate your values and vision."
+      }
+    }
+  }
 }
