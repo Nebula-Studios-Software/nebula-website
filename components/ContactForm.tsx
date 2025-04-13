@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Phone, Mail, Clock, Clipboard, X } from 'lucide-react';
-import { Input, Button, Textarea, Link, addToast } from '@heroui/react';
+import { Input, Button, Textarea, Link, addToast, Form } from '@heroui/react';
 const fadeIn = {
 	hidden: { opacity: 0, y: 20 },
 	visible: {
@@ -85,57 +85,72 @@ const ContactForm = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<h2 className="text-2xl font-bold mb-6">Send us a message</h2>
-					<form onSubmit={handleSubmit} className="space-y-6">
-						<div className="space-y-2">
-							<Input
-								label="Your Name"
-								id="name"
-								name="name"
-								value={formData.name}
-								onChange={handleChange}
-								placeholder="John Doe"
-								required
-							/>
-						</div>
+					<Form onSubmit={handleSubmit} className="space-y-6 w-full">
+						<Input
+							label="Your Name"
+							id="name"
+							name="name"
+							value={formData.name}
+							onChange={handleChange}
+							labelPlacement="outside"
+							placeholder="John Doe"
+							fullWidth
+							required
+							classNames={{
+								inputWrapper:
+									'w-full p-3 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-400',
+							}}
+						/>
 
-						<div className="space-y-2">
-							<Input
-								label="Email Address"
-								id="email"
-								name="email"
-								type="email"
-								value={formData.email}
-								onChange={handleChange}
-								placeholder="john@example.com"
-								required
-							/>
-						</div>
+						<Input
+							label="Email Address"
+							id="email"
+							name="email"
+							type="email"
+							value={formData.email}
+							onChange={handleChange}
+							placeholder="john@example.com"
+							labelPlacement="outside"
+							required
+							fullWidth
+							classNames={{
+								inputWrapper:
+									'w-full p-3 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-400',
+							}}
+						/>
 
-						<div className="space-y-2">
-							<Input
-								label="Subject"
-								id="subject"
-								name="subject"
-								value={formData.subject}
-								onChange={handleChange}
-								placeholder="Project Inquiry"
-								required
-							/>
-						</div>
+						<Input
+							label="Subject"
+							id="subject"
+							name="subject"
+							value={formData.subject}
+							onChange={handleChange}
+							placeholder="Project Inquiry"
+							labelPlacement="outside"
+							required
+							fullWidth
+							classNames={{
+								inputWrapper:
+									'w-full p-3 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-400',
+							}}
+						/>
 
-						<div className="space-y-2">
-							<Textarea
-								label="Message"
-								id="message"
-								name="message"
-								value={formData.message}
-								onChange={handleChange}
-								placeholder="Tell us about your project..."
-								required
-								rows={6}
-							/>
-						</div>
-
+						<Textarea
+							label="Message"
+							id="message"
+							name="message"
+							value={formData.message}
+							onChange={handleChange}
+							placeholder="Tell us about your project..."
+							labelPlacement="outside"
+							required
+							rows={6}
+							fullWidth
+							classNames={{
+								inputWrapper:
+									'w-full p-3 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-400',
+							}}
+						/>
 						<Button
 							type="submit"
 							className="w-full bg-primary-600 hover:bg-primary-500"
@@ -143,7 +158,7 @@ const ContactForm = () => {
 							<Send className="mr-2 h-4 w-4" />
 							Send Message
 						</Button>
-					</form>
+					</Form>
 				</motion.div>
 
 				<motion.div
