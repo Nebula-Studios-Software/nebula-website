@@ -9,8 +9,10 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@formatjs/intl-localematcher": "^0.6.1",
 		"@heroui/react": "^2.7.6",
 		"@hookform/resolvers": "^5.0.1",
+		"@nextui-org/react": "^2.6.11",
 		"@react-aria/ssr": "3.9.7",
 		"@react-aria/visually-hidden": "3.8.21",
 		"class-variance-authority": "^0.7.1",
@@ -23,6 +25,7 @@
 		"input-otp": "^1.4.2",
 		"intl-messageformat": "^10.5.0",
 		"lucide-react": "^0.487.0",
+		"negotiator": "^1.0.0",
 		"next": "^15.3.0",
 		"next-themes": "^0.4.6",
 		"react": "18.3.1",

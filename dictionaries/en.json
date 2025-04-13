@@ -1,0 +1,33 @@
+{
+	"common": {
+		"nav": {
+			"home": "Home",
+			"services": "Services",
+			"projects": "Projects",
+			"about": "About",
+			"getInTouch": "Get in Touch"
+		},
+		"contact": {
+			"title": "Contact Us",
+			"subtitle": "Ready to discuss your project? Get in touch with us to schedule a free consultation.",
+			"form": {
+				"name": "Name",
+				"email": "Email",
+				"subject": "Subject",
+				"message": "Message",
+				"terms": "I agree to the",
+				"privacy": "Privacy Policy",
+				"send": "Send Message",
+				"success": {
+					"title": "Thank You! 🎉",
+					"message": "We've received your message. We'll get back to you soon!"
+				}
+			},
+			"info": {
+				"email": "Email",
+				"phone": "Phone",
+				"location": "Location"
+			}
+		}
+	}
+}

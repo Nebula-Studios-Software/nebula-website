@@ -1,0 +1,33 @@
+{
+	"common": {
+		"nav": {
+			"home": "Home",
+			"services": "Servizi",
+			"projects": "Progetti",
+			"about": "Team",
+			"getInTouch": "Contattaci"
+		},
+		"contact": {
+			"title": "Contattaci",
+			"subtitle": "Pronto a discutere il tuo progetto? Contattaci per una consulenza gratuita.",
+			"form": {
+				"name": "Nome",
+				"email": "Email",
+				"subject": "Oggetto",
+				"message": "Messaggio",
+				"terms": "Accetto la",
+				"privacy": "Privacy Policy",
+				"send": "Invia Messaggio",
+				"success": {
+					"title": "Grazie! 🎉",
+					"message": "Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto!"
+				}
+			},
+			"info": {
+				"email": "Email",
+				"phone": "Telefono",
+				"location": "Indirizzo"
+			}
+		}
+	}
+}

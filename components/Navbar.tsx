@@ -13,26 +13,40 @@ import {
 } from 'lucide-react';
 import { Link } from '@heroui/link';
 import { Button, Image } from '@heroui/react';
-const Navbar = () => {
+import { useRouter } from 'next/navigation';
+
+interface NavbarProps {
+	dictionary: any;
+}
+
+const Navbar = ({ dictionary }: NavbarProps) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const router = useRouter();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
 	const navLinks = [
-		{ name: 'Home', path: '/', icon: <Home size={16} /> },
 		{
-			name: 'Services',
+			name: dictionary?.common?.nav?.home || 'Home',
+			path: '/',
+			icon: <Home size={16} />,
+		},
+		{
+			name: dictionary?.common?.nav?.services || 'Services',
 			path: '/services',
 			icon: <Server size={16} />,
 		},
-		{ name: 'Projects', path: '/projects', icon: <Code size={16} /> },
-		{ name: 'About', path: '/about', icon: <User size={16} /> },
 		{
-			name: 'Contact',
-			path: '/contact',
-			icon: <Contact size={16} />,
+			name: dictionary?.common?.nav?.projects || 'Projects',
+			path: '/projects',
+			icon: <Code size={16} />,
+		},
+		{
+			name: dictionary?.common?.nav?.about || 'About',
+			path: '/about',
+			icon: <User size={16} />,
 		},
 	];
 
@@ -66,7 +80,7 @@ const Navbar = () => {
 								variant="solid"
 								startContent={<Mail size={16} />}
 							>
-								Get in Touch
+								{dictionary?.common?.nav?.getInTouch || 'Get in Touch'}
 							</Button>
 						</div>
 
@@ -88,8 +102,10 @@ const Navbar = () => {
 										color="default"
 										variant="light"
 										key={link.name}
-										href={link.path}
-										onPress={() => setIsMenuOpen(false)}
+										onPress={() => {
+											router.push(link.path);
+											setIsMenuOpen(false);
+										}}
 										className="flex items-center justify-start gap-2 min-h-[40px]"
 									>
 										<span className="flex items-center justify-center w-5 h-5">
@@ -103,7 +119,7 @@ const Navbar = () => {
 									variant="shadow"
 									startContent={<Mail size={16} />}
 								>
-									Get in Touch
+									{dictionary?.common?.nav?.getInTouch || 'Get in Touch'}
 								</Button>
 							</div>
 						</div>

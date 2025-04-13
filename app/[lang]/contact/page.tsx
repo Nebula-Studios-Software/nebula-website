@@ -4,10 +4,10 @@ import ContactForm from '@/components/ContactForm';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const Page = () => {
+const Page = ({ dictionary }: { dictionary: any }) => {
 	return (
 		<div className="min-h-screen">
-			<Navbar />
+			<Navbar dictionary={dictionary} />
 			<main className="pt-32 pb-20">
 				<ContactForm />
 			</main>
