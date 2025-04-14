@@ -9,6 +9,7 @@ const nextConfig = {
 				hostname: 'placehold.co',
 			},
 		],
+		unoptimized: true,
 	},
 	// Configurazione per GitHub Pages
 	basePath: process.env.NODE_ENV === 'production' ? '' : '',
