@@ -13,9 +13,7 @@ import { motion } from 'framer-motion';
 import { useParams, useRouter } from 'next/navigation';
 
 import { getDictionary } from '../dictionaries';
-
-import Navbar from '@/components/Navbar';
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 
 const fadeIn = {
 	hidden: { opacity: 0, y: 20 },

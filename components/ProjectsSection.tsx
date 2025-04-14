@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@heroui/link';
 import { cn } from '@/lib/utils';
-
+import { Image } from '@heroui/react';
 interface Project {
 	id: number;
 	title: string;
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
 							)}
 						>
 							<div className="aspect-video w-full bg-primary-900 relative overflow-hidden">
-								<img
+								<Image
 									src={project.imageUrl}
 									alt={project.title}
 									className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
