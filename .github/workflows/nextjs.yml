@@ -87,7 +87,7 @@ jobs:
             const supportedLangs = ["en", "it"];
             const defaultLang = "en";
             const userLang = supportedLangs.includes(lang) ? lang : defaultLang;
-            window.location.href = `/${userLang}/`;
+            window.location.href = `/${userLang}`;
           </script>
         </head>
         <body>

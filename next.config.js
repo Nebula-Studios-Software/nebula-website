@@ -10,6 +10,10 @@ const nextConfig = {
 			},
 		],
 	},
+	// Configurazione per GitHub Pages
+	basePath: process.env.NODE_ENV === 'production' ? '' : '',
+	assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+	output: 'export',
 };
 
 module.exports = nextConfig;
