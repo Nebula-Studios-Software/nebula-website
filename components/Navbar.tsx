@@ -40,9 +40,6 @@ export default function Navbar({ dictionary }: NavbarProps) {
 		return '/' + parts.slice(2).join('/');
 	};
 
-	console.log('pathname', pathname);
-	console.log('basePath', getBasePath(pathname));
-
 	// Crea i percorsi con il prefisso della lingua usando useMemo per performance
 	const navLinks = useMemo(() => {
 		// Non creare navLinks finché non abbiamo una lingua valida
@@ -98,12 +95,7 @@ export default function Navbar({ dictionary }: NavbarProps) {
 					<div className="glass-panel rounded-xl px-4 py-2 backdrop-blur-md bg-white/10 border border-white/10 hover:shadow-xl hover:shadow-white/5 transition-all duration-300">
 						<div className="flex items-center justify-between">
 							<Link className="flex items-center space-x-2" href={`/${currentLang}`}>
-								<Image
-									alt="logo"
-									height={64}
-									src={`${process.env.NODE_ENV === 'production' ? '' : ''}/logo_full.svg`}
-									width={200}
-								/>
+								<Image alt="logo" height={64} src="/logo_full.svg" width={200} />
 							</Link>
 
 							{/* Desktop Navigation */}

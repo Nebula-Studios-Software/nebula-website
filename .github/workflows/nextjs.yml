@@ -75,29 +75,10 @@ jobs:
      run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
    - name: Build with Next.js
      run: ${{ steps.detect-package-manager.outputs.runner }} next build
-   - name: Create redirect file
-     run: |
-      echo '<!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Redirecting...</title>
-          <script>
-            const lang = navigator.language.split("-")[0];
-            const supportedLangs = ["en", "it"];
-            const defaultLang = "en";
-            const userLang = supportedLangs.includes(lang) ? lang : defaultLang;
-            window.location.href = `/${userLang}`;
-          </script>
-        </head>
-        <body>
-          <p>Redirecting to your preferred language...</p>
-        </body>
-      </html>' > out/index.html
    - name: Upload artifact
      uses: actions/upload-pages-artifact@v3
      with:
-      path: ./out
+      path: ./.next
 
  # Deployment job
  deploy:
