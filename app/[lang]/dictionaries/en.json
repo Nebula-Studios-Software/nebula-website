@@ -10,22 +10,53 @@
 		},
 		"contact": {
 			"title": "Contact Us",
-			"subtitle": "Have a project in mind? Let's talk about how we can help bring your ideas to life.",
+			"subtitle": "Get in touch with us",
+			"info": {
+				"email": "info@nebulastudio.dev"
+			},
 			"form": {
 				"name": "Name",
 				"email": "Email",
 				"subject": "Subject",
 				"message": "Message",
-				"terms": "I accept the terms and conditions",
-				"privacy": "Privacy Policy",
+				"terms": "I agree to the processing of my data in accordance with",
+				"privacy": "Nebula Studio's privacy policy",
 				"send": "Send Message",
 				"success": {
 					"title": "Message Sent!",
-					"message": "We'll get back to you soon."
+					"message": "Thank you for contacting us. We will get back to you soon."
 				}
-			},
-			"info": {
-				"email": "Email"
+			}
+		},
+		"privacy": {
+			"title": "Privacy Policy",
+			"lastUpdated": "Last Updated",
+			"introduction": "At Nebula Studio, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information.",
+			"sections": {
+				"dataCollection": {
+					"title": "Information We Collect",
+					"content": "We collect information that you provide directly to us, including your name, email address, and any other information you choose to provide when contacting us through our website."
+				},
+				"dataUsage": {
+					"title": "How We Use Your Information",
+					"content": "We use the information we collect to respond to your inquiries, provide customer support, and improve our services. We do not sell or share your personal information with third parties."
+				},
+				"dataProtection": {
+					"title": "Data Protection",
+					"content": "We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction."
+				},
+				"cookies": {
+					"title": "Cookies",
+					"content": "Our website uses cookies to enhance your browsing experience. You can control cookie settings through your browser preferences."
+				},
+				"rights": {
+					"title": "Your Rights",
+					"content": "You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at info@nebulastudio.dev"
+				},
+				"changes": {
+					"title": "Changes to This Policy",
+					"content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page."
+				}
 			}
 		}
 	},
@@ -58,69 +89,27 @@
 		"items": {
 			"web": {
 				"title": "Web Development",
-				"description": "Custom web applications and websites built with modern technologies for optimal performance.",
-				"features": {
-					"fullStack": "Full-stack development with React, Next.js, Node.js",
-					"pwa": "Progressive Web Apps (PWAs)",
-					"responsive": "Responsive design for all devices",
-					"performance": "Performance optimization",
-					"seo": "SEO-friendly architecture"
-				}
+				"description": "Custom web applications and websites built with modern technologies for optimal performance."
 			},
 			"mobile": {
 				"title": "Mobile Development",
-				"description": "Native and cross-platform mobile apps that provide seamless experiences across devices.",
-				"features": {
-					"native": "iOS and Android app development",
-					"crossPlatform": "React Native for cross-platform solutions",
-					"nativeDev": "Native app development with Swift and Kotlin",
-					"uiux": "Mobile UI/UX design",
-					"optimization": "App Store optimization"
-				}
+				"description": "Native and cross-platform mobile apps that provide seamless experiences across devices."
 			},
 			"design": {
 				"title": "UI/UX Design",
-				"description": "User-centered design that balances aesthetics with functionality to create intuitive interfaces.",
-				"features": {
-					"research": "User research and persona development",
-					"wireframing": "Wireframing and prototyping",
-					"visual": "Visual design and branding",
-					"testing": "Usability testing",
-					"systems": "Design systems creation"
-				}
+				"description": "Beautiful and intuitive interfaces that enhance user experience and drive engagement."
 			},
 			"strategy": {
 				"title": "Digital Strategy",
-				"description": "Strategic guidance to help you achieve your business goals through digital solutions.",
-				"features": {
-					"analysis": "Market and competitor analysis",
-					"transformation": "Digital transformation planning",
-					"kpi": "KPI definition and tracking",
-					"growth": "Growth strategy development",
-					"tech": "Technology stack consultation"
-				}
+				"description": "Strategic planning and consulting to help you achieve your digital goals."
 			},
 			"ecommerce": {
 				"title": "E-commerce Solutions",
-				"description": "Custom online stores and shopping experiences built for conversion and ease of use.",
-				"features": {
-					"custom": "Custom e-commerce development",
-					"cart": "Shopping cart and checkout optimization",
-					"payment": "Payment gateway integration",
-					"inventory": "Inventory management systems",
-					"crm": "Customer relationship management"
-				}
+				"description": "Custom e-commerce platforms that drive sales and enhance customer experience."
 			},
 			"branding": {
-				"title": "Branding & Identity",
-				"description": "Cohesive brand identities that effectively communicate your values and vision.",
-				"features": {
-					"logo": "Logo design and brand guidelines",
-					"identity": "Visual identity systems",
-					"messaging": "Brand messaging and voice",
-					"collateral": "Marketing collateral design",
-					"strategy": "Brand strategy development"
-				}
+				"title": "Branding",
+				"description": "Comprehensive branding solutions that help you stand out in the digital landscape."
 			}
 		}
 	}

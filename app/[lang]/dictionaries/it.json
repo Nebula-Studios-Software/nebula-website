@@ -6,26 +6,26 @@
 			"projects": "Progetti",
 			"about": "Chi Siamo",
 			"contact": "Contatti",
-			"getInTouch": "Scrivici"
+			"getInTouch": "Contattaci"
 		},
 		"contact": {
 			"title": "Contattaci",
-			"subtitle": "Hai un progetto in mente? Parliamo di come possiamo aiutarti a realizzare le tue idee.",
+			"subtitle": "Mettiti in contatto con noi",
+			"info": {
+				"email": "info@nebulastudio.dev"
+			},
 			"form": {
 				"name": "Nome",
 				"email": "Email",
 				"subject": "Oggetto",
 				"message": "Messaggio",
-				"terms": "Accetto i termini e le condizioni",
-				"privacy": "Informativa sulla Privacy",
+				"terms": "Acconsento al trattamento dei miei dati secondo la",
+				"privacy": "privacy policy di Nebula Studio",
 				"send": "Invia Messaggio",
 				"success": {
 					"title": "Messaggio Inviato!",
-					"message": "Ti risponderemo al più presto."
+					"message": "Grazie per averci contattato. Ti risponderemo al più presto."
 				}
-			},
-			"info": {
-				"email": "Email"
 			}
 		}
 	},
@@ -58,69 +58,27 @@
 		"items": {
 			"web": {
 				"title": "Sviluppo Web",
-				"description": "Applicazioni web e siti personalizzati costruiti con tecnologie moderne per prestazioni ottimali.",
-				"features": {
-					"fullStack": "Sviluppo full-stack con React, Next.js, Node.js",
-					"pwa": "Progressive Web Apps (PWA)",
-					"responsive": "Design responsive per tutti i dispositivi",
-					"performance": "Ottimizzazione delle prestazioni",
-					"seo": "Architettura ottimizzata per il SEO"
-				}
+				"description": "Applicazioni web e siti personalizzati costruiti con tecnologie moderne per prestazioni ottimali."
 			},
 			"mobile": {
 				"title": "Sviluppo Mobile",
-				"description": "App native e cross-platform che offrono esperienze fluide su tutti i dispositivi.",
-				"features": {
-					"native": "Sviluppo app iOS e Android",
-					"crossPlatform": "React Native per soluzioni cross-platform",
-					"nativeDev": "Sviluppo nativo con Swift e Kotlin",
-					"uiux": "Design UI/UX mobile",
-					"optimization": "Ottimizzazione per gli store"
-				}
+				"description": "App native e cross-platform che offrono esperienze fluide su tutti i dispositivi."
 			},
 			"design": {
 				"title": "UI/UX Design",
-				"description": "Design centrato sull'utente che bilancia estetica e funzionalità per creare interfacce intuitive.",
-				"features": {
-					"research": "Ricerca utente e sviluppo di personae",
-					"wireframing": "Wireframing e prototipazione",
-					"visual": "Design visivo e branding",
-					"testing": "Test di usabilità",
-					"systems": "Creazione di design system"
-				}
+				"description": "Interfacce belle e intuitive che migliorano l'esperienza utente e aumentano l'engagement."
 			},
 			"strategy": {
 				"title": "Strategia Digitale",
-				"description": "Guida strategica per aiutarti a raggiungere i tuoi obiettivi aziendali attraverso soluzioni digitali.",
-				"features": {
-					"analysis": "Analisi di mercato e competitor",
-					"transformation": "Pianificazione della trasformazione digitale",
-					"kpi": "Definizione e monitoraggio dei KPI",
-					"growth": "Sviluppo della strategia di crescita",
-					"tech": "Consulenza sullo stack tecnologico"
-				}
+				"description": "Pianificazione strategica e consulenza per aiutarti a raggiungere i tuoi obiettivi digitali."
 			},
 			"ecommerce": {
 				"title": "Soluzioni E-commerce",
-				"description": "Negozi online e esperienze di shopping personalizzate per massimizzare le conversioni.",
-				"features": {
-					"custom": "Sviluppo e-commerce personalizzato",
-					"cart": "Ottimizzazione del carrello e del checkout",
-					"payment": "Integrazione gateway di pagamento",
-					"inventory": "Sistemi di gestione inventario",
-					"crm": "Gestione delle relazioni con i clienti"
-				}
+				"description": "Piattaforme e-commerce personalizzate che aumentano le vendite e migliorano l'esperienza cliente."
 			},
 			"branding": {
-				"title": "Branding & Identità",
-				"description": "Identità di marca coerenti che comunicano efficacemente i tuoi valori e la tua visione.",
-				"features": {
-					"logo": "Design del logo e linee guida del brand",
-					"identity": "Sistemi di identità visiva",
-					"messaging": "Messaggistica e tono di voce del brand",
-					"collateral": "Design dei materiali di marketing",
-					"strategy": "Sviluppo della strategia di brand"
-				}
+				"title": "Branding",
+				"description": "Soluzioni di branding complete che ti aiutano a distinguerti nel panorama digitale."
 			}
 		}
 	}

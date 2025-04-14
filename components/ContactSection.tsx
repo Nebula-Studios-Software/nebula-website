@@ -3,33 +3,12 @@ import React, { useState } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { Button, Checkbox, Form, Input, Link, Textarea } from '@heroui/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDictionaryContext } from '@/contexts/DictionaryContext';
 
 import CheckmarkAnimation from './CheckmarkAnimation';
 
-interface ContactSectionProps {
-	dict: {
-		title: string;
-		subtitle: string;
-		form: {
-			name: string;
-			email: string;
-			subject: string;
-			message: string;
-			terms: string;
-			privacy: string;
-			send: string;
-			success: {
-				title: string;
-				message: string;
-			};
-		};
-		info: {
-			email: string;
-		};
-	};
-}
-
-export default function ContactSection({ dict }: ContactSectionProps) {
+export default function ContactSection() {
+	const { dictionary } = useDictionaryContext();
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -67,8 +46,12 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 				<div className="glass-panel rounded-xl overflow-hidden">
 					<div className="grid grid-cols-1 lg:grid-cols-2">
 						<div className="p-8 md:p-12">
-							<h2 className="text-3xl md:text-4xl font-bold mb-4">{dict.title}</h2>
-							<p className="text-muted-foreground mb-8">{dict.subtitle}</p>
+							<h2 className="text-3xl md:text-4xl font-bold mb-4">
+								{dictionary.common.contact.title}
+							</h2>
+							<p className="text-muted-foreground mb-8">
+								{dictionary.common.contact.subtitle}
+							</p>
 
 							<div className="space-y-6 mb-8">
 								<div className="flex items-start">
@@ -77,7 +60,7 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 									</div>
 									<div className="ml-4">
 										<h4 className="text-sm font-medium text-foreground/80">
-											{dict.info.email}
+											{dictionary.common.contact.info.email}
 										</h4>
 										<a
 											className="text-primary-400 hover:underline"
@@ -135,10 +118,10 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 														inputWrapper:
 															'w-full p-3 rounded-lg bg-white/5 border border-white/10 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-400',
 													}}
-													label={dict.form.name}
+													label={dictionary.common.contact.form.name}
 													labelPlacement="outside"
 													name="name"
-													placeholder={dict.form.name}
+													placeholder={dictionary.common.contact.form.name}
 													type="text"
 													value={formData.name}
 													onChange={handleInputChange}
@@ -194,18 +177,29 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 												onChange={handleInputChange}
 											/>
 
-											<Checkbox
-												isRequired
-												id="terms"
-												onChange={(e) => {
-													setTermsChecked(e.target.checked);
-												}}
-											>
-												{dict.form.terms}{' '}
-												<Link className="text-primary-400 hover:underline" href="/privacy">
-													{dict.form.privacy}
-												</Link>
-											</Checkbox>
+											<div className="flex items-center gap-2">
+												<Checkbox
+													isRequired
+													id="terms"
+													onChange={(e) => {
+														setTermsChecked(e.target.checked);
+													}}
+												/>
+												<label htmlFor="terms" className="text-sm">
+													{dictionary.common.contact.form.terms}{' '}
+													<Link
+														color="primary"
+														underline="always"
+														href="/privacy"
+														onClick={(e) => {
+															e.preventDefault();
+															window.location.href = '/privacy';
+														}}
+													>
+														{dictionary.common.contact.form.privacy}
+													</Link>
+												</label>
+											</div>
 
 											<Button
 												fullWidth
@@ -215,7 +209,7 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 												type="submit"
 												variant="shadow"
 											>
-												{dict.form.send}
+												{dictionary.common.contact.form.send}
 											</Button>
 										</Form>
 									</motion.div>
@@ -227,8 +221,8 @@ export default function ContactSection({ dict }: ContactSectionProps) {
 										transition={{ duration: 0.5 }}
 									>
 										<CheckmarkAnimation
-											message={dict.form.success.message}
-											title={dict.form.success.title}
+											message={dictionary.common.contact.form.success.message}
+											title={dictionary.common.contact.form.success.title}
 										/>
 									</motion.div>
 								)}

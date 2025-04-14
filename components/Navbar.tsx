@@ -8,23 +8,14 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 
 import { useLoading } from '@/contexts/LoadingContext';
 import { siteConfig } from '@/config/site';
+import { useDictionaryContext } from '@/contexts/DictionaryContext';
 
 interface NavbarProps {
-	dictionary: {
-		common: {
-			nav: {
-				home: string;
-				services: string;
-				projects: string;
-				about: string;
-				contact: string;
-				getInTouch: string;
-			};
-		};
-	};
+	currentLanguage: string;
 }
 
-export default function Navbar({ dictionary }: NavbarProps) {
+export default function Navbar({ currentLanguage }: NavbarProps) {
+	const { dictionary } = useDictionaryContext();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const router = useRouter();
 	const pathname = usePathname();
