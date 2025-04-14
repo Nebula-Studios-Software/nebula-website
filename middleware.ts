@@ -23,7 +23,10 @@ export function middleware(request: NextRequest) {
 	if (pathnameHasLocale) return;
 
 	const locale = getLocale(request);
-	request.nextUrl.pathname = `/${locale}${pathname}`;
+	const cleanPathname = pathname.endsWith('/')
+		? pathname.slice(0, -1)
+		: pathname;
+	request.nextUrl.pathname = `/${locale}${cleanPathname}`;
 	return NextResponse.redirect(request.nextUrl);
 }
 
