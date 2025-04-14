@@ -27,6 +27,37 @@
 					"message": "Grazie per averci contattato. Ti risponderemo al più presto."
 				}
 			}
+		},
+		"privacy": {
+			"title": "Informativa sulla Privacy",
+			"lastUpdated": "Ultimo aggiornamento",
+			"introduction": "In Nebula Studio, prendiamo sul serio la tua privacy. Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali.",
+			"sections": {
+				"dataCollection": {
+					"title": "Informazioni che Raccogliamo",
+					"content": "Raccogliamo le informazioni che ci fornisci direttamente, incluso il tuo nome, indirizzo email e qualsiasi altra informazione che scegli di fornire quando ci contatti attraverso il nostro sito web."
+				},
+				"dataUsage": {
+					"title": "Come Utilizziamo le Tue Informazioni",
+					"content": "Utilizziamo le informazioni che raccogliamo per rispondere alle tue richieste, fornire supporto clienti e migliorare i nostri servizi. Non vendiamo né condividiamo le tue informazioni personali con terze parti."
+				},
+				"dataProtection": {
+					"title": "Protezione dei Dati",
+					"content": "Implementiamo misure di sicurezza appropriate per proteggere le tue informazioni personali da accessi non autorizzati, alterazioni, divulgazioni o distruzioni."
+				},
+				"cookies": {
+					"title": "Cookie",
+					"content": "Il nostro sito web utilizza i cookie per migliorare la tua esperienza di navigazione. Puoi controllare le impostazioni dei cookie attraverso le preferenze del tuo browser."
+				},
+				"rights": {
+					"title": "I Tuoi Diritti",
+					"content": "Hai il diritto di accedere, correggere o eliminare le tue informazioni personali. Per esercitare questi diritti, contattaci a info@nebulastudio.dev"
+				},
+				"changes": {
+					"title": "Modifiche a Questa Informativa",
+					"content": "Potremmo aggiornare questa Informativa sulla Privacy di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Informativa sulla Privacy su questa pagina."
+				}
+			}
 		}
 	},
 	"hero": {
@@ -79,6 +110,52 @@
 			"branding": {
 				"title": "Branding",
 				"description": "Soluzioni di branding complete che ti aiutano a distinguerti nel panorama digitale."
+			}
+		}
+	},
+	"projects": {
+		"title": "I Nostri Progetti",
+		"subtitle": "Scopri i nostri ultimi lavori e storie di successo",
+		"items": {
+			"project1": {
+				"title": "Piattaforma E-commerce",
+				"description": "Una moderna piattaforma e-commerce costruita con Next.js e integrazione Stripe",
+				"technologies": ["Next.js", "Stripe", "Tailwind CSS"]
+			},
+			"project2": {
+				"title": "App Mobile",
+				"description": "Un'applicazione mobile cross-platform per la gestione dei task",
+				"technologies": ["React Native", "Firebase", "Redux"]
+			},
+			"project3": {
+				"title": "Dashboard Web",
+				"description": "Una dashboard di analisi in tempo reale per business intelligence",
+				"technologies": ["React", "D3.js", "WebSocket"]
+			}
+		}
+	},
+	"about": {
+		"title": "Chi Siamo",
+		"subtitle": "Incontra il team di Nebula Studio",
+		"description": "Siamo un team appassionato di sviluppatori, designer e strategisti dedicati a creare esperienze digitali eccezionali.",
+		"team": {
+			"title": "Il Nostro Team",
+			"members": {
+				"member1": {
+					"name": "Mario Rossi",
+					"role": "Lead Developer",
+					"description": "Sviluppatore full-stack con oltre 10 anni di esperienza"
+				},
+				"member2": {
+					"name": "Laura Bianchi",
+					"role": "UI/UX Designer",
+					"description": "Designer creativa focalizzata sull'esperienza utente"
+				},
+				"member3": {
+					"name": "Luca Verdi",
+					"role": "Project Manager",
+					"description": "Esperto in project management agile"
+				}
 			}
 		}
 	}

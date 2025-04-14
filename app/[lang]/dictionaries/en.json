@@ -112,5 +112,51 @@
 				"description": "Comprehensive branding solutions that help you stand out in the digital landscape."
 			}
 		}
+	},
+	"projects": {
+		"title": "Our Projects",
+		"subtitle": "Discover our latest work and success stories",
+		"items": {
+			"project1": {
+				"title": "E-commerce Platform",
+				"description": "A modern e-commerce platform built with Next.js and Stripe integration",
+				"technologies": ["Next.js", "Stripe", "Tailwind CSS"]
+			},
+			"project2": {
+				"title": "Mobile App",
+				"description": "A cross-platform mobile application for task management",
+				"technologies": ["React Native", "Firebase", "Redux"]
+			},
+			"project3": {
+				"title": "Web Dashboard",
+				"description": "A real-time analytics dashboard for business intelligence",
+				"technologies": ["React", "D3.js", "WebSocket"]
+			}
+		}
+	},
+	"about": {
+		"title": "About Us",
+		"subtitle": "Meet the team behind Nebula Studio",
+		"description": "We are a passionate team of developers, designers, and strategists dedicated to creating exceptional digital experiences.",
+		"team": {
+			"title": "Our Team",
+			"members": {
+				"member1": {
+					"name": "John Doe",
+					"role": "Lead Developer",
+					"description": "Full-stack developer with 10+ years of experience"
+				},
+				"member2": {
+					"name": "Jane Smith",
+					"role": "UI/UX Designer",
+					"description": "Creative designer focused on user experience"
+				},
+				"member3": {
+					"name": "Mike Johnson",
+					"role": "Project Manager",
+					"description": "Experienced in agile project management"
+				}
+			}
+		}
 	}
 }
